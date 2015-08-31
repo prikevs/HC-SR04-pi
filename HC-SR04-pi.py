@@ -11,7 +11,7 @@ PIN_OUT = 11
 PIN_IN  = 12
 
 def setup():
-    GPIO.setwarnings(False)
+#GPIO.setwarnings(False)
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(PIN_OUT, GPIO.OUT) 
     GPIO.setup(PIN_IN, GPIO.IN)
@@ -35,10 +35,6 @@ def getDistance():
     distance = getTime() * 17150
     distance = round(distance, 2)
     return distance
-
-def end_program(signal, frame):
-    print "Ctrl+c to quit the program"
-    GPIO.cleanup()   
 
 if __name__ == '__main__':
     setup()
